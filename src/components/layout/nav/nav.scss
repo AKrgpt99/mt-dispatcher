@@ -1,0 +1,14 @@
+.ak-nav {
+  width: 112px;
+  height: 100%;
+  padding: {
+    top: 92px;
+  }
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary-light);
+  justify-content: center;
+  align-items: center;
+}
