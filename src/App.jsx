@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import Dashboard from "./pages/dashboard";
 import Settings from "./pages/settings";
@@ -18,7 +18,8 @@ function App() {
         <TopBar />
         <Nav />
         <Switch>
-          <Route exact path="/" render={() => <Dashboard />} />
+          <Route exact path="/" render={() => <Redirect to="/dispatch" />} />
+          <Route exact path="/dashboard" render={() => <Dashboard />} />v\
           <Route exact path="/settings" render={() => <Settings />} />
           <Route exact path="/accounts" render={() => <Accounts />} />
           <Route exact path="/drivers" render={() => <Drivers />} />

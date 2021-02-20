@@ -6,18 +6,6 @@ import "./topbar.css";
 import IconButton from "../../icon-button";
 import Icon from "../../icon";
 
-function ProfileButton() {
-  return (
-    <Link to="/profile">
-      <div className="ak-profile--thumbnail">
-        <div className="ak-profile--thumbnail__bg">
-          <p>D1</p>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
 function LogoButton() {
   return (
     <Link to="/">
@@ -43,7 +31,6 @@ class TopBar extends Component {
       <div className="ak-row ak-topbar">
         <div className="ak-row ak-topbar__toolbar">
           <div className="ak-row ak-topbar__toolbar__section0">
-            <ProfileButton />
             <LogoButton />
             <SearchBar />
           </div>
@@ -68,6 +55,7 @@ class TopBar extends Component {
             />
           </div>
         </div>
+        <div className="ak-topbar__bg--blur"></div>
       </div>
     );
   }
