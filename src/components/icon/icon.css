@@ -1,7 +1,4 @@
 .ak-icon {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

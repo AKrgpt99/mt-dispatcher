@@ -1,11 +1,65 @@
 .ak-nav {
   width: 112px;
   height: 100%;
-  z-index: -1;
+  padding: {
+    top: 92px;
+  }
+  z-index: 0;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: var(--secondary-light);
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+
+  a {
+  }
+
+  .ak-profile {
+    width: calc(48px + 4rem);
+    height: 92px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+
+    &--thumbnail {
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-weight: 900;
+      border-style: none;
+      background-color: var(--primary-light);
+      margin: {
+        left: 1rem;
+        right: 1rem;
+      }
+      z-index: 2;
+
+      &:hover {
+        color: var(--secondary-dark);
+      }
+    }
+  }
+
+  &__toolbar {
+    width: 100%;
+    height: calc(100% - 92px);
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.active {
+        background-color: rgba(242, 193, 58, 0.25);
+      }
+    }
+  }
 }

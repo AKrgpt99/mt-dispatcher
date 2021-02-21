@@ -13,6 +13,8 @@
   font-weight: 900;
   border-style: none;
   outline: none;
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.0625);
 }
 
 .ak-icon-button--no-bg {
