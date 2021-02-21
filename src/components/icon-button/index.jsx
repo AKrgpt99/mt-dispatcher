@@ -7,6 +7,7 @@ import Icon from "../icon";
 export default function IconButton({
   width,
   name,
+  margin,
   iconWidth,
   iconColor,
   iconInitial,
@@ -28,7 +29,7 @@ export default function IconButton({
     <button
       ref={ref}
       className={`ak-icon-button${(variation && `--${variation}`) || ""}`}
-      style={{ width, height: width }}
+      style={{ width, height: width, margin: margin || "unset" }}
     >
       <Icon
         name={name}
