@@ -1,0 +1,51 @@
+:root {
+  // Colors
+  --primary-main: #f2c13a;
+  --primary-light: #fff36d;
+  --primary-dark: #bb9100;
+  --secondary-main: #263238;
+  --secondary-light: #4f5b62;
+  --secondary-dark: #000a12;
+
+  // Fonts
+  font-size: 16px;
+  font-family: "Work Sans", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--secondary-light);
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-light);
+}
+
+input {
+  font-family: "Work Sans", sans-serif;
+}
+
+.ak-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.ak-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ak-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.App {
+  position: relative;
+}
