@@ -1,4 +1,4 @@
-export default {
+window.iconLib = {
   bell: {
     viewBox: "0 0 448 512",
     d:

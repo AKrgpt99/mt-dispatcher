@@ -2,12 +2,12 @@ import React, { Component } from "react";
 
 import "./icon.css";
 
-import icons from "../../util/icon-lib";
+// import icons from "../../../assets/scripts/icon-lib";
 
 class Icon extends Component {
   render() {
     const { name, width, color, variation, margin } = this.props;
-    const icon = icons[name];
+    const icon = window.icons.find(icon => icon.name === name);
 
     return (
       <svg className="ak-icon" width={width} height={width} style={{margin}} viewBox={icon.viewBox}>
