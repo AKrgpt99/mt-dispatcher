@@ -23,68 +23,28 @@ class Nav extends Component {
         <ProfileButton />
         <div className="ak-col ak-nav__toolbar">
           <NavLink to="/dashboard" activeClassName="active">
-            <Icon
-              width="24px"
-              name="gauge"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="gauge" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/settings" activeClassName="active">
-            <Icon
-              width="24px"
-              name="cog"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="cog" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/drivers" activeClassName="active">
-            <Icon
-              width="24px"
-              name="car"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="car" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/accounts" activeClassName="active">
-            <Icon
-              width="24px"
-              name="user"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="user" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/customers" activeClassName="active">
-            <Icon
-              width="24px"
-              name="phone"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="phone" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/bookings" activeClassName="active">
-            <Icon
-              width="24px"
-              name="bookings"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="bookings" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/reports" activeClassName="active">
-            <Icon
-              width="24px"
-              name="report"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="report" color="primary" margin="1rem" />
           </NavLink>
           <NavLink to="/dispatch" activeClassName="active">
-            <Icon
-              width="24px"
-              name="map"
-              color="primary"
-              margin="1rem"
-            />
+            <Icon width="24px" name="map" color="primary" margin="1rem" />
           </NavLink>
         </div>
       </div>

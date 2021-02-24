@@ -40,18 +40,21 @@ class TopBar extends Component {
               name="bell"
               iconWidth="16px"
               iconInitial="light"
+              margin="0.5rem"
             />
             <IconButton
               width="48px"
               name="comment"
               iconWidth="16px"
               iconInitial="light"
+              margin="0.5rem"
             />
             <IconButton
               width="48px"
               name="down"
               iconWidth="16px"
               iconInitial="light"
+              margin="0.5rem"
             />
           </div>
         </div>
