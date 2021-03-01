@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACnB,QAAQ,EAAE,KAAK;EACf,KAAK,EAAE,kCAAkC;EACzC,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,EAAE;EACX,MAAM,EAAE,kBAAkB;EAC1B,IAAI,EAAE,KAAK;EACX,MAAM,EAAE,IAAI;EAEV,WAAG,EAAE,IAAI;EACT,cAAM,EAAE,IAAI;EAEd,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CACpB",
+    "sources": [
+        "dispatch-toolbar.scss"
+    ],
+    "names": [],
+    "file": "dispatch-toolbar.css"
+}

@@ -1,17 +1,26 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import "./icon.css";
+import {
+  getIconData,
+  getIconErrors,
+} from "../../../features/loaders/icon-loader/iconLoaderSlice";
+import { getAppLoading } from "../../../features/loaders/app-loader/appLoaderSlice";
 
 const IconSvg = ({ name, width, color, variation, margin }) => {
-  let iconState = useSelector((state) => state.root.icon.icons);
-  let icon;
+  const [viewBox, setViewBox] = useState("");
+  const [d, setD] = useState("");
+  const appLoading = useSelector(getAppLoading);
+  const iconErrors = useSelector(getIconErrors);
+  const iconData = useSelector(getIconData);
 
   useEffect(() => {
-    if (iconState !== []) {
-      icon = iconState.find((i) => i.name === name);
+    if (!appLoading && Object.keys(iconErrors).length === 0) {
+      setViewBox(iconData[name].viewBox);
+      setD(iconData[name].d);
     }
-  }, [iconState]);
+  }, [appLoading]);
 
   return (
     <svg
@@ -19,10 +28,10 @@ const IconSvg = ({ name, width, color, variation, margin }) => {
       width={width}
       height={width}
       style={{ margin }}
-      viewBox={icon.viewBox}
+      viewBox={viewBox}
     >
       <path
-        d={icon.d}
+        d={d}
         style={{
           fill: color
             ? `var(--${color}-${variation || "main"})`

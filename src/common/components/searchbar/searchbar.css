@@ -1,0 +1,154 @@
+.ak-searchbar {
+  width: 256px;
+  height: 16px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.125);
+  border-radius: 32px;
+  position: relative;
+}
+
+.ak-searchbar input[type="text"] {
+  position: absolute;
+  width: calc(100% - 3rem);
+  height: 100%;
+  margin-left: 1rem;
+  padding-left: 2rem;
+  top: 0;
+  left: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.ak-searchbar--glass-dark-bg {
+  background-color: rgba(0, 0, 0, 0.0625);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--glass-darker-bg {
+  background-color: rgba(0, 0, 0, 0.125);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--glass-light-bg {
+  background-color: rgba(255, 255, 255, 0.0625);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--glass-lighter-bg {
+  background-color: rgba(255, 255, 255, 0.125);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--solid-secondary-bg {
+  background-color: var(--secondary-main);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--solid-primary-bg {
+  background-color: var(--primary-main);
+  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+}
+
+.ak-searchbar--no-bg {
+  background: none;
+}
+
+.ak-searchbar--collapsed {
+  height: 16px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.125);
+  border-radius: 32px;
+  position: relative;
+  margin: 0;
+}
+
+.ak-searchbar--collapsed input[type="text"] {
+  position: absolute;
+  margin-left: 1rem;
+  padding-left: 2rem;
+  left: 0;
+  border: none;
+  background: none;
+  outline: none;
+  -webkit-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+}
+
+.ak-searchbar--collapsed--anim-init {
+  width: 16px;
+}
+
+.ak-searchbar--collapsed--anim-init input[type="text"] {
+  width: 0;
+  opacity: 0;
+}
+
+.ak-searchbar--collapsed--anim-final {
+  width: 196px;
+}
+
+.ak-searchbar--collapsed--anim-final input[type="text"] {
+  width: calc(100% - 3rem);
+  opacity: 1;
+}
+
+.ak-searchbar--collapsed--anim-start {
+  -webkit-animation: growSearchbarAnimation 100ms ease-in-out;
+          animation: growSearchbarAnimation 100ms ease-in-out;
+  width: 196px;
+}
+
+.ak-searchbar--collapsed--anim-end {
+  animation: growSearchbarAnimation 100ms ease-in-out reverse;
+  width: 16px;
+}
+
+@-webkit-keyframes growSearchbarAnimation {
+  0% {
+    width: 16px;
+  }
+  100% {
+    width: 196px;
+  }
+}
+
+@keyframes growSearchbarAnimation {
+  0% {
+    width: 16px;
+  }
+  100% {
+    width: 196px;
+  }
+}
+/*# sourceMappingURL=searchbar.css.map */

@@ -1,0 +1,50 @@
+.ak-areas {
+  position: fixed;
+  width: calc(((100vw - 112px) / 2) - 4rem);
+  height: 224px;
+  background-color: white;
+  z-index: -1;
+  bottom: 0;
+  left: 112px;
+  margin: 2rem;
+  padding: 1rem;
+  box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+
+  tr > td:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.0625);
+    border-radius: 4px;
+  }
+
+  &__t-head > td {
+    text-align: center;
+    max-width: 3rem;
+  }
+
+  &__info {
+    min-height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: {
+      top: 4px;
+      bottom: 4px;
+    }
+    border-radius: 4px;
+
+    &--busy {
+      background-color: #ff0000;
+    }
+
+    &--available {
+      background-color: #008000;
+    }
+
+    > a > p {
+      color: white;
+      margin: 0;
+      font-size: 0.75rem;
+    }
+  }
+}

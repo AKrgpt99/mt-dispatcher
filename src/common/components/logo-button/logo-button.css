@@ -1,0 +1,14 @@
+.ak-logo {
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+
+.ak-logo:hover {
+  color: var(--secondary-dark);
+}
+
+.ak-logo__text {
+  font-size: 24px;
+  font-weight: 900;
+}
+/*# sourceMappingURL=logo-button.css.map */

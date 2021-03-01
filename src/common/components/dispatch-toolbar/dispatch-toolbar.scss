@@ -1,0 +1,15 @@
+.ak-dispatch-toolbar {
+  position: fixed;
+  width: calc(((100vw - 112px) / 2) - 4rem);
+  height: 12px;
+  z-index: -1;
+  bottom: calc(224px + 5rem);
+  left: 112px;
+  margin: 2rem;
+  padding: {
+    top: 1rem;
+    bottom: 1rem;
+  }
+  justify-content: space-between;
+  align-items: center;
+}

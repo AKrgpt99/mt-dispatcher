@@ -1,8 +1,7 @@
 .ak-topbar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
   height: 92px;
   box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
   justify-content: flex-end;
@@ -20,12 +19,12 @@
   }
 
   &__toolbar {
-    width: calc(100% - 112px - 2rem);
+    width: calc(100% - 2rem);
     height: 92px;
     justify-content: space-between;
     padding: {
-      left: 16px;
-      right: 16px;
+      left: 1rem;
+      right: 1rem;
     }
     z-index: 1;
 
@@ -33,49 +32,33 @@
     &__section1 {
       align-items: center;
     }
+  }
 
-    .ak-logo {
-      margin: {
-        left: 1rem;
-        right: 2rem;
-      }
+  &--anim-init {
+    width: calc(100% - 112px);
+  }
 
-      &:hover {
-        color: var(--secondary-dark);
-      }
+  &--anim-final {
+    width: calc(100% - 224px);
+  }
 
-      &__text {
-        font-size: 24px;
-        font-weight: 900;
-      }
-    }
+  &--anim-start {
+    animation: shrinkTopbarAnimation 100ms ease-in-out;
+    width: calc(100% - 224px);
+  }
 
-    .ak-searchbar {
-      width: 256px;
-      height: 16px;
-      justify-content: start;
-      align-items: center;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.0625);
-      border-radius: 32px;
-      position: relative;
+  &--anim-end {
+    animation: shrinkTopbarAnimation 100ms ease-in-out reverse;
+    width: calc(100% - 112px);
+  }
+}
 
-      input[type="text"] {
-        position: absolute;
-        width: calc(100% - 3rem);
-        height: 100%;
-        margin: {
-          left: 1rem;
-        }
-        padding: {
-          left: 2rem;
-        }
-        top: 0;
-        left: 0;
-        border: none;
-        background: none;
-        outline: none;
-      }
-    }
+@keyframes shrinkTopbarAnimation {
+  0% {
+    width: calc(100% - 112px);
+  }
+
+  100% {
+    width: calc(100% - 224px);
   }
 }

@@ -1,0 +1,131 @@
+.ak-searchbar {
+  width: 256px;
+  height: 16px;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.125);
+  border-radius: 32px;
+  position: relative;
+
+  input[type="text"] {
+    position: absolute;
+    width: calc(100% - 3rem);
+    height: 100%;
+    margin: {
+      left: 1rem;
+    }
+    padding: {
+      left: 2rem;
+    }
+    top: 0;
+    left: 0;
+    border: none;
+    background: none;
+    outline: none;
+  }
+
+  &--glass-dark-bg {
+    background-color: rgba(0, 0, 0, 0.0625);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-darker-bg {
+    background-color: rgba(0, 0, 0, 0.125);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-light-bg {
+    background-color: rgba(255, 255, 255, 0.0625);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-lighter-bg {
+    background-color: rgba(255, 255, 255, 0.125);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--solid-secondary-bg {
+    background-color: var(--secondary-main);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--solid-primary-bg {
+    background-color: var(--primary-main);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--no-bg {
+    background: none;
+  }
+
+  &--collapsed {
+    height: 16px;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.125);
+    border-radius: 32px;
+    position: relative;
+    margin: 0;
+
+    input[type="text"] {
+      position: absolute;
+      margin: {
+        left: 1rem;
+      }
+      padding: {
+        left: 2rem;
+      }
+      left: 0;
+      border: none;
+      background: none;
+      outline: none;
+      transition: opacity 100ms ease;
+    }
+
+    &--anim-init {
+      width: 16px;
+
+      & input[type="text"] {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    &--anim-final {
+      width: 196px;
+
+      & input[type="text"] {
+        width: calc(100% - 3rem);
+        opacity: 1;
+      }
+    }
+
+    &--anim-start {
+      animation: growSearchbarAnimation 100ms ease-in-out;
+      width: 196px;
+    }
+
+    &--anim-end {
+      animation: growSearchbarAnimation 100ms ease-in-out reverse;
+      width: 16px;
+    }
+  }
+}
+
+@keyframes growSearchbarAnimation {
+  0% {
+    width: 16px;
+  }
+
+  100% {
+    width: 196px;
+  }
+}

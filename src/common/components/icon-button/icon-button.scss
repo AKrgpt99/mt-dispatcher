@@ -7,18 +7,43 @@
   font-weight: 900;
   border-style: none;
   outline: none;
-  margin: 1rem;
-  background-color: rgba(0, 0, 0, 0.0625);
+  padding: 0;
+
+  &--glass-dark-bg {
+    background-color: rgba(0, 0, 0, 0.0625);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-darker-bg {
+    background-color: rgba(0, 0, 0, 0.125);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-light-bg {
+    background-color: rgba(255, 255, 255, 0.0625);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--glass-lighter-bg {
+    background-color: rgba(255, 255, 255, 0.125);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--solid-secondary-bg {
+    background-color: var(--secondary-main);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
+
+  &--solid-primary-bg {
+    background-color: var(--primary-main);
+    box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
+  }
 
   &--no-bg {
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-weight: 900;
-    border-style: none;
-    outline: none;
     background: none;
   }
 }

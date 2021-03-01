@@ -1,25 +1,28 @@
-import React, { Component } from "react";
+import { Component, createRef } from "react";
+import { connect } from "react-redux";
 
 import "./map.css";
 
-class Map extends Component {
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      new window.google.maps.Map(document.getElementById("map"), {
-        center: {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        },
-        zoom: 10,
-        disableDefaultUI: true,
-        mapId: "214ae42d83eff2d9",
-      });
-    });
+class MapContainer extends Component {
+  constructor() {
+    super();
+    this.ref = createRef();
   }
 
   render() {
-    return <div id="map"></div>;
+    const { loading, Map } = this.props;
+
+    return (
+      <div className="ak-map-container">
+        {!loading && <Map ref={this.ref} />}
+      </div>
+    );
   }
 }
 
-export default Map;
+const mapStateToProps = (state) => ({
+  loading: state.root.map.loading,
+  Map: state.root.map.Component,
+});
+
+export default connect(mapStateToProps, null)(MapContainer);

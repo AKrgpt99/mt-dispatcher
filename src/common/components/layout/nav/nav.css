@@ -1,7 +1,5 @@
 .ak-nav {
-  width: 112px;
   height: 100%;
-  padding-top: 92px;
   z-index: 0;
   position: fixed;
   bottom: 0;
@@ -10,48 +8,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.ak-nav .ak-profile {
-  width: calc(48px + 4rem);
-  height: 92px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
-          box-shadow: 0 3px 99px rgba(0, 0, 0, 0.25);
-}
-
-.ak-nav .ak-profile--thumbnail {
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
-  font-weight: 900;
-  border-style: none;
-  background-color: var(--primary-light);
-  margin-left: 1rem;
-  margin-right: 1rem;
-  z-index: 2;
-}
-
-.ak-nav .ak-profile--thumbnail:hover {
-  color: var(--secondary-dark);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .ak-nav__toolbar {
@@ -65,20 +24,138 @@
           justify-content: flex-start;
 }
 
-.ak-nav__toolbar a {
+.ak-nav__toolbar__link {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.ak-nav__toolbar a.active {
-  background-color: rgba(242, 193, 58, 0.25);
+.ak-nav__toolbar__link:hover {
+  background-color: #f2c13a20;
+}
+
+.ak-nav__toolbar__link.active {
+  background-color: #f2c13a40;
+}
+
+.ak-nav__toolbar__link__icon-wrapper {
+  width: 3rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 2.75rem;
+}
+
+.ak-nav__toolbar__link__text {
+  color: white;
+}
+
+.ak-nav__toolbar__link__text--anim-init {
+  -webkit-transform: translateX(-2.75rem);
+          transform: translateX(-2.75rem);
+  opacity: 0;
+}
+
+.ak-nav__toolbar__link__text--anim-final {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.ak-nav__toolbar__link__text--anim-start {
+  -webkit-animation: slideLinkAnimation 100ms ease;
+          animation: slideLinkAnimation 100ms ease;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.ak-nav__toolbar__link__text--anim-end {
+  animation: slideLinkAnimation 100ms ease reverse;
+  -webkit-transform: translateX(-2.75rem);
+          transform: translateX(-2.75rem);
+  opacity: 0;
+}
+
+.ak-nav--anim-init {
+  width: 112px;
+}
+
+.ak-nav--anim-init .ak-nav__toolbar__text {
+  -webkit-transform: translateX(-2.75rem);
+          transform: translateX(-2.75rem);
+  opacity: 0;
+}
+
+.ak-nav--anim-final {
+  width: 224px;
+}
+
+.ak-nav--anim-final .ak-nav__toolbar__text {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.ak-nav--anim-start {
+  -webkit-animation: growNavAnimation 100ms ease-in-out;
+          animation: growNavAnimation 100ms ease-in-out;
+  width: 224px;
+}
+
+.ak-nav--anim-end {
+  animation: growNavAnimation 100ms ease-in-out reverse;
+  width: 112px;
+}
+
+@-webkit-keyframes growNavAnimation {
+  0% {
+    width: 112px;
+  }
+  100% {
+    width: 224px;
+  }
+}
+
+@keyframes growNavAnimation {
+  0% {
+    width: 112px;
+  }
+  100% {
+    width: 224px;
+  }
+}
+
+@-webkit-keyframes slideLinkAnimation {
+  0% {
+    -webkit-transform: translateX(-2rem);
+            transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLinkAnimation {
+  0% {
+    -webkit-transform: translateX(-2rem);
+            transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=nav.css.map */

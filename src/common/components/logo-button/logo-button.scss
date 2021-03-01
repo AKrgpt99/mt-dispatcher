@@ -1,0 +1,15 @@
+.ak-logo {
+  margin: {
+    left: 1rem;
+    right: 2rem;
+  }
+
+  &:hover {
+    color: var(--secondary-dark);
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 900;
+  }
+}

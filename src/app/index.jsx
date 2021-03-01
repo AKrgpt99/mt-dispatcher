@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Switch,
   BrowserRouter as Router,
   Route,
   Redirect,
 } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 import "./App.css";
-import { setIcons } from "../features/icon-loader/iconLoaderSlice";
 import Dashboard from "../features/pages/dashboard";
 import Settings from "../features/pages/settings";
 import Accounts from "../features/pages/accounts";
@@ -17,45 +15,49 @@ import Customers from "../features/pages/customers";
 import Bookings from "../features/pages/bookings";
 import Reports from "../features/pages/reports";
 import Dispatch from "../features/pages/dispatch";
-import { TopBar, Nav } from "../common/components/layout";
-
-const mediaServerUrl = process.env.MEDIA_SERVER_URL || "http://localhost:3000";
+import Layout from "../common/components/layout";
+import AppLoader from "../features/loaders/app-loader";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    // Load icons from media server
-    fetch(`${mediaServerUrl}/icons`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        dispatch(
-          setIcons(
-            data.data.icons.map((icon) => (data.data.icons[icon.name] = icon))
-          )
-        );
-      });
-  }, []);
-
   return (
     <div className="App">
-      <Router>
-        <TopBar />
-        <Nav />
-        <Switch>
-          <Route exact path="/" render={() => <Redirect to="/dispatch" />} />
-          <Route exact path="/dashboard" render={() => <Dashboard />} />
-          <Route exact path="/settings" render={() => <Settings />} />
-          <Route exact path="/accounts" render={() => <Accounts />} />
-          <Route exact path="/drivers" render={() => <Drivers />} />
-          <Route exact path="/customers" render={() => <Customers />} />
-          <Route exact path="/bookings" render={() => <Bookings />} />
-          <Route exact path="/reports" render={() => <Reports />} />
-          <Route exact path="/dispatch" render={() => <Dispatch />} />
-        </Switch>
-      </Router>
+      <AppLoader>
+        <Router>
+          <Layout>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => <Redirect to="/dispatch" />}
+              />
+              <Route exact path="/dashboard">
+                <Dashboard />
+              </Route>
+              <Route exact path="/settings">
+                <Settings />
+              </Route>
+              <Route exact path="/accounts">
+                <Accounts />
+              </Route>
+              <Route exact path="/drivers">
+                <Drivers />
+              </Route>
+              <Route exact path="/customers">
+                <Customers />
+              </Route>
+              <Route exact path="/bookings">
+                <Bookings />
+              </Route>
+              <Route exact path="/reports">
+                <Reports />
+              </Route>
+              <Route exact path="/dispatch">
+                <Dispatch />
+              </Route>
+            </Switch>
+          </Layout>
+        </Router>
+      </AppLoader>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import "./icon-button.css";
 
 import Icon from "../icon";
 
-export default function IconButton({
+const IconButton = ({
   width,
   name,
   margin,
@@ -12,8 +12,10 @@ export default function IconButton({
   iconColor,
   iconInitial,
   variation,
-}) {
+  onClick,
+}) => {
   const ref = useRef();
+
   const [iconVariation, setIconVariation] = useState(iconInitial || "main");
 
   useEffect(() => {
@@ -28,8 +30,11 @@ export default function IconButton({
   return (
     <button
       ref={ref}
-      className={`ak-icon-button${(variation && `--${variation}`) || ""}`}
+      className={`ak-icon-button ak-icon-button${
+        (variation && `--${variation}`) || "--glass-dark-bg"
+      }`}
       style={{ width, height: width, margin: margin || "unset" }}
+      onClick={onClick}
     >
       <Icon
         name={name}
@@ -39,4 +44,6 @@ export default function IconButton({
       />
     </button>
   );
-}
+};
+
+export default IconButton;
