@@ -21,24 +21,4 @@ const loadMapScript = () => {
   return mapScript;
 };
 
-const loadMarkerClusteringScript = () => {
-  const markerClusteringUrl =
-    "https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js";
-  const scripts = document.getElementsByTagName("script");
-
-  for (let i = 0; i < scripts.length; i++) {
-    if (scripts.item(i).src.indexOf(markerClusteringUrl) === 0) {
-      return scripts.item(i);
-    }
-  }
-
-  const markerClusteringScript = document.createElement("script");
-  markerClusteringScript.src = markerClusteringUrl;
-  markerClusteringScript.async = true;
-  markerClusteringScript.defer = true;
-  document.body.appendChild(markerClusteringScript);
-
-  return markerClusteringScript;
-};
-
-export { loadMapScript, useMap, loadMarkerClusteringScript };
+export { loadMapScript, useMap };

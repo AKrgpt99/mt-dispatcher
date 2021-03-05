@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import {
-  loadMapScript,
-  useMap,
-  loadMarkerClusteringScript,
-} from "../../../common/utils/gmaps-script";
+import { loadMapScript, useMap } from "../../../common/utils/gmaps-script";
 
 export const mapLoaderSlice = createSlice({
   name: "mapLoader",
@@ -39,12 +35,12 @@ export const {
 
 export const loadMap = () => (dispatch, getState) => {
   const googleMapScript = loadMapScript();
-  loadMarkerClusteringScript();
   let markers = [];
 
   googleMapScript.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        // Accumulate driver location data in an array format
         if (getState().root.driver.data.active) {
           Object.keys(getState().root.driver.data.active).map((driverId) => {
             markers.push({
@@ -53,7 +49,6 @@ export const loadMap = () => (dispatch, getState) => {
             });
           });
         }
-
         dispatch(setMapComponent(useMap(position, markers)));
         dispatch(setMapLoading(false));
       },
